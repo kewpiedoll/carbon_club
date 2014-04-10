@@ -1,0 +1,33 @@
+<h1>Listing producers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Full Name</th>
+      <th>Re System Type</th>
+      <th>Init Kwh Reading</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @producers.each do |producer| %>
+      <tr>
+        <td><%= producer.user_name %></td>
+        <td><%= producer.full_name %></td>
+        <td><%= producer.re_system_type %></td>
+        <td><%= producer.init_kwh_reading %></td>
+        <td><%= link_to 'Show', producer %></td>
+        <td><%= link_to 'Edit', edit_producer_path(producer) %></td>
+        <td><%= link_to 'Destroy', producer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Producer', new_producer_path %>

@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -31,6 +35,10 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# this is my own gem from the first trimester
+# it processes files from the Aurora PowerOne inverter
+gem 'aurora_file_processor', '~> 0.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,33 @@
+<%= form_for(@producer) do |f| %>
+  <% if @producer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producer.errors.count, "error") %> prohibited this producer from being saved:</h2>
+
+      <ul>
+      <% @producer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label :re_system_type %><br>
+    <%= f.number_field :re_system_type %>
+  </div>
+  <div class="field">
+    <%= f.label :init_kwh_reading %><br>
+    <%= f.number_field :init_kwh_reading %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

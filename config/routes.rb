@@ -1,6 +1,13 @@
 CarbonClub::Application.routes.draw do
+  get "welcome/index"
   resources :producers
+  
+  get '/index', to: 'welcome#index'
+  #can change this to add functionality later
+  #get '/hello/:name', to: 'welcome#index'
 
+  root to: 'welcome#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

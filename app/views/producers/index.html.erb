@@ -6,7 +6,8 @@
       <th>User Name</th>
       <th>Full Name</th>
       <th>Re System Type</th>
-      <th>Init Kwh Reading</th>
+      <th>Init kWh Reading</th>
+      <th>Email</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
         <td><%= producer.full_name %></td>
         <td><%= producer.re_system_type %></td>
         <td><%= producer.init_kwh_reading %></td>
+        <td><%= producer.email %></td>
         <td><%= link_to 'Show', producer %></td>
         <td><%= link_to 'Edit', edit_producer_path(producer) %></td>
         <td><%= link_to 'Destroy', producer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

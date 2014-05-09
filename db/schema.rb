@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410230118) do
+ActiveRecord::Schema.define(version: 20140508234745) do
+
+  create_table "energy_systems", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "producer_id"
+    t.integer  "CO2_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "producers", force: true do |t|
     t.string   "user_name"
     t.string   "full_name"
     t.integer  "re_system_type"
     t.integer  "init_kwh_reading"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
+  create_table "registrations", force: true do |t|
+    t.integer  "producer_id"
+    t.integer  "energy_system_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

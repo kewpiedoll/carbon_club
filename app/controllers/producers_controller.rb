@@ -10,6 +10,8 @@ class ProducersController < ApplicationController
   # GET /producers/1
   # GET /producers/1.json
   def show
+    @title = "Show User"
+    render 'show', layout: 'show_user'
   end
 
   # GET /producers/new
@@ -19,6 +21,8 @@ class ProducersController < ApplicationController
 
   # GET /producers/1/edit
   def edit
+    @title = "Edit User"
+    render 'edit', layout: 'edit_user'
   end
 
   # POST /producers
@@ -69,6 +73,6 @@ class ProducersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producer_params
-      params.require(:producer).permit(:user_name, :full_name, :re_system_type, :init_kwh_reading)
+      params.require(:producer).permit(:user_name, :full_name, :re_system_type, :init_kwh_reading, :email)
     end
 end

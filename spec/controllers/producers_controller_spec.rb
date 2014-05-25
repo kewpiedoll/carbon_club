@@ -23,7 +23,14 @@ describe ProducersController do
   # This should return the minimal set of attributes required to create a valid
   # Producer. As you add validations to Producer, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "user_name" => "MyString" } }
+  let(:valid_attributes) { { user_name: "chris",
+                             full_name: "Chris A",
+                             re_system_type: "2",
+                             init_kwh_reading: "1910",
+                             email: "biodieselchris@gmail.com",
+                             password: 'qqqwwweee',
+                             password_confirmation: 'qqqwwweee',
+                             confirmed_at: Time.now} }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -33,6 +40,7 @@ describe ProducersController do
   describe "GET index" do
     it "assigns all producers as @producers" do
       producer = Producer.create! valid_attributes
+      sign_in producer
       get :index, {}, valid_session
       assigns(:producers).should eq([producer])
     end
@@ -41,6 +49,7 @@ describe ProducersController do
   describe "GET show" do
     it "assigns the requested producer as @producer" do
       producer = Producer.create! valid_attributes
+      sign_in producer
       get :show, {:id => producer.to_param}, valid_session
       assigns(:producer).should eq(producer)
     end
@@ -48,6 +57,8 @@ describe ProducersController do
 
   describe "GET new" do
     it "assigns a new producer as @producer" do
+      #
+      sign_in producer
       get :new, {}, valid_session
       assigns(:producer).should be_a_new(Producer)
     end
@@ -56,6 +67,7 @@ describe ProducersController do
   describe "GET edit" do
     it "assigns the requested producer as @producer" do
       producer = Producer.create! valid_attributes
+      sign_in producer
       get :edit, {:id => producer.to_param}, valid_session
       assigns(:producer).should eq(producer)
     end
@@ -64,6 +76,7 @@ describe ProducersController do
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Producer" do
+        #sign_in producer
         expect {
           post :create, {:producer => valid_attributes}, valid_session
         }.to change(Producer, :count).by(1)

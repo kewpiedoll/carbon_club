@@ -1,4 +1,6 @@
 class ProducersController < ApplicationController
+  before_filter :authenticate_producer!
+
   before_action :set_producer, only: [:show, :edit, :update, :destroy]
 
   # GET /producers
@@ -11,7 +13,6 @@ class ProducersController < ApplicationController
   # GET /producers/1.json
   def show
     @title = "Show User"
-    render 'show', layout: 'show_user'
   end
 
   # GET /producers/new
@@ -22,7 +23,6 @@ class ProducersController < ApplicationController
   # GET /producers/1/edit
   def edit
     @title = "Edit User"
-    render 'edit', layout: 'edit_user'
   end
 
   # POST /producers

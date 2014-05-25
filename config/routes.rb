@@ -1,4 +1,5 @@
 CarbonClub::Application.routes.draw do
+  devise_for :producers
   get "welcome/index"
   resources :producers
   

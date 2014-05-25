@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <!-- User name was moved to show_user layout as a header in the page -->
 <!-- <p>
   <strong>User Name:</strong>
   <%= @producer.user_name %>
 </p> -->
 
+<div class="row" %>
+<div class="span6 offset3">
 <p>
   <strong>Full Name:</strong>
   <%= @producer.full_name %>
@@ -28,3 +28,5 @@
 
 <%= link_to 'Edit', edit_producer_path(@producer) %> |
 <%= link_to 'Back', producers_path %>
+
+</div></div>

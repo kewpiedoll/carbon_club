@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Own Carbon", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",     '#'       %></li>
+          <li><%= link_to "Help",     '#'       %></li>
+          <li><%= devise_links %>                 </li>
+        </ul>
+      </nav>
+    </div>
+    <%= "You are signed in as: #{current_producer.full_name}" if current_producer %>
+  </div>
+</header>

@@ -13,7 +13,7 @@ gem 'figaro'
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
-  # Use sqlite3 as the database for Active Record
+  gem 'factory_girl_rails', '4.2.1'
   gem 'sqlite3'
 end
 

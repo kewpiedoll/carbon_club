@@ -12,7 +12,6 @@ class ProducersController < ApplicationController
   # GET /producers/1
   # GET /producers/1.json
   def show
-    @title = "Show User"
   end
 
   # GET /producers/new
@@ -23,6 +22,7 @@ class ProducersController < ApplicationController
   # GET /producers/1/edit
   def edit
     @title = "Edit User"
+    # @producer = Producer.find(params[:id]) #page did not load without this
   end
 
   # POST /producers

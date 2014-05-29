@@ -1,7 +1,7 @@
 class AdminMailer < ActionMailer::Base
   default from: "admin@carbon-club.com"
 
-  def notify_about_new student
+  def notify_about_new producer
     @producer = producer
     to = 'admin@class-mngmt.com'
     to = 'biodieselchris@gmail.com' if Rails.env.production?

@@ -7,6 +7,7 @@ class ProducersController < ApplicationController
   # GET /producers.json
   def index
     @producers = Producer.all
+    @cu = current_producer
   end
 
   # GET /producers/1
@@ -21,8 +22,6 @@ class ProducersController < ApplicationController
 
   # GET /producers/1/edit
   def edit
-    @title = "Edit User"
-    # @producer = Producer.find(params[:id]) #page did not load without this
   end
 
   # POST /producers

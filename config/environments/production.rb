@@ -1,17 +1,28 @@
 CarbonClub::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_mailer.default_url_options = { host: 'http://stormy-brushlands-4790.herokuapp.com' }
+  
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => ENV['mailtrap_username'],
+  #   :password => ENV['mailtrap_password'],
+  #   :address => "mailtrap.io",
+  #   :domain => "mailtrap.io",
+  #   :port => 25,
+  #   :authentication => :plain
+  # }
 
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['mailtrap_username'],
-    :password => ENV['mailtrap_password'],
-    :address => "mailtrap.io",
-    :domain => "mailtrap.io",
-    :port => 25,
-    :authentication => :plain
-  }
+  config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => 'stormy-brushlands-4790.heroku.com' }
+ActionMailer::Base.smtp_settings = {
+  :address    => "smtp.sendgrid.net",
+  :port       => 25,
+  :user_name  => ENV['SENDGRID_USERNAME'],
+  :password   => ENV['SENDGRID_PASSWORD'],
+  :domain     => ENV['SENDGRID_DOMAIN'],
+  :authentication  => :plain
+}
 
 
   # Code is not reloaded between requests.

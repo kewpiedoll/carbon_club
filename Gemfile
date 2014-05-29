@@ -5,6 +5,7 @@ gem 'rails', '4.0.4'
 
 group :production do 
   gem 'pg' 
+  gem 'rails_12factor', '0.0.2'
 end
 
 gem 'devise'

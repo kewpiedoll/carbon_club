@@ -152,18 +152,3 @@ describe ProducersController do
     end
   end
 end
-
-describe "Producers 2" do
-
-  subject { page }
-
-  describe "profile page" do
-    let(:producer) { FactoryGirl.create(:producer) }
-    before do
-      sign_in producer
-      visit producer_path(producer)
-    end
-    it { should have_content(producer.user_name) } 
-    it { should have_title(full_title(producer.user_name)) }
-  end
-end

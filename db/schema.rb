@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529043439) do
+ActiveRecord::Schema.define(version: 20140601201653) do
 
   create_table "energy_systems", force: true do |t|
     t.string   "title"
@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 20140529043439) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "admin",                  default: false
+    t.boolean  "approved",               default: false, null: false
   end
 
+  add_index "producers", ["approved"], name: "index_producers_on_approved"
   add_index "producers", ["confirmation_token"], name: "index_producers_on_confirmation_token", unique: true
   add_index "producers", ["reset_password_token"], name: "index_producers_on_reset_password_token", unique: true
 

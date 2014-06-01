@@ -6,13 +6,30 @@ class Producer < ActiveRecord::Base
 	has_many :registrations
 	has_many :energy_systems, through: :registrations
 
-  after_create :notify_admin
-
+  after_create :send_admin_mail
+  
   scope :founder, -> { where user_name: 'Chris' }
-end
+  
+  def active_for_authentication? 
+    super && approved? 
+  end 
+
+  def inactive_message 
+    if !approved? 
+      :not_approved 
+    else 
+      super # Use whatever other message 
+    end 
+  end
 
   private
 
-  def notify_admin
-    AdminMailer.notify_about_new(self).deliver
+  # def notify_admin
+  #   AdminMailer.notify_about_new(self).deliver
+  # end
+
+  def send_admin_mail
+    AdminMailer.new_producer_waiting_for_approval(self).deliver
   end
+
+end

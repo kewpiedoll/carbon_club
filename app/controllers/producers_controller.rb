@@ -6,8 +6,11 @@ class ProducersController < ApplicationController
   # GET /producers
   # GET /producers.json
   def index
-    @producers = Producer.all
-    @cu = current_producer
+    if params[:approved] == "false"
+      @producers = Producer.find_all_by_approved(false)
+    else
+      @producers = Producer.all
+    end
   end
 
   # GET /producers/1

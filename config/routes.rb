@@ -1,4 +1,4 @@
-CarbonClub::Application.routes.draw do
+GreenCoin::Application.routes.draw do
   devise_for :producers
   resources :producers
   

@@ -7,7 +7,7 @@ describe "Static pages" do
   describe "Home page" do 
     before { visit root_path }
 
-    it { should have_content('CarbonClub') }
+    it { should have_content('GreenCoin') }
     it { should have_title(full_title('')) }
     it { should_not have_title('| Home') }
   end
@@ -21,7 +21,7 @@ describe "Static pages" do
 
     it "should have the title 'Help'" do
       visit help_path
-      expect(page).to have_title('CarbonClub | Help')
+      expect(page).to have_title('GreenCoin | Help')
     end
   end
 
@@ -33,7 +33,7 @@ describe "Static pages" do
 
     it "should have the title 'About Us'" do
       visit about_path
-      expect(page).to have_title('CarbonClub | About')
+      expect(page).to have_title('GreenCoin | About')
     end
   end
 
@@ -45,7 +45,7 @@ describe "Static pages" do
 
     it "should have the title 'Contact'" do 
       visit contact_path
-      expect(page).to have_title("CarbonClub | Contact")
+      expect(page).to have_title("GreenCoin | Contact")
     end
   end
 end

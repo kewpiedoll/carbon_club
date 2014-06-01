@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CarbonClub::Application.load_tasks
+GreenCoin::Application.load_tasks

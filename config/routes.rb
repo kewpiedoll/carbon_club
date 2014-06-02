@@ -1,6 +1,9 @@
 GreenCoin::Application.routes.draw do
   devise_for :producers
   resources :producers
+  resources :admins
+
+
   
   #can change this to add functionality later
   #get '/hello/:name', to: 'welcome#index'
